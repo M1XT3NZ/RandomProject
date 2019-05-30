@@ -38,23 +38,30 @@ namespace StillThinkingAboutWhatIShouldDo
             Application.Exit();
         }
 
-        private void MetroToggle1_CheckedChanged(object sender, EventArgs e)
+        public void MetroToggle1_CheckedChanged(object sender, EventArgs e)
         {
             if (metroToggle1.Checked)
             {
+
                 GEILO.Theme = MetroThemeStyle.Dark;
+                Properties.Settings.Default.Thingy = true;
+                Properties.Settings.Default.Save();
                 //Mecha.Theme = MetroThemeStyle.Dark;
                 //GEILO.Style = MetroColorStyle.Black;
             }
             if (metroToggle1.Checked == false)
             {
+
                 GEILO.Theme = MetroThemeStyle.Light;
-                
+                Properties.Settings.Default.Thingy = false;
+                Properties.Settings.Default.Save();
             }
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            metroToggle1.Checked = Properties.Settings.Default.Thingy;
+
             metroTabControl1.TabPages.Remove(metroTabPage3);
             string[] commandLineArgs = Environment.GetCommandLineArgs();
             for (int i = 0; i < commandLineArgs.Length; i++)
