@@ -11,8 +11,9 @@ using MetroFramework;
 using MetroFramework.Forms;
 using System.Threading;
 using System.Diagnostics;
-
 using System.IO;
+using IniParser;
+using IniParser.Model;
 
 namespace StillThinkingAboutWhatIShouldDo
 {
@@ -163,6 +164,24 @@ namespace StillThinkingAboutWhatIShouldDo
 
         private void MetroTextBox1_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void MetroButton3_Click(object sender, EventArgs e)
+        {
+            var parser = new FileIniDataParser();
+            IniData data = parser.ReadFile("Config.ini");
+
+
+            KeyDataCollection keyCol = data["Test"];
+            string directvalue = keyCol["Test1"];
+            directvalue = data["Test"]["Test1"];
+
+            
+
+            //MessageBox.Show(directvalue, "");
+
+            //adirectvalue = 
 
         }
     }
