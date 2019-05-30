@@ -43,7 +43,6 @@
             this.metroToggle2 = new MetroFramework.Controls.MetroToggle();
             this.GEILO = new MetroFramework.Components.MetroStyleManager(this.components);
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
-            this.metroButton3 = new MetroFramework.Controls.MetroButton();
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
             this.metroTabPage2.SuspendLayout();
@@ -170,7 +169,6 @@
             // 
             // metroTabPage2
             // 
-            this.metroTabPage2.Controls.Add(this.metroButton3);
             this.metroTabPage2.Controls.Add(this.metroLabel1);
             this.metroTabPage2.Controls.Add(this.metroToggle1);
             this.metroTabPage2.HorizontalScrollbarBarColor = true;
@@ -249,16 +247,6 @@
             this.metroButton1.UseSelectable = true;
             this.metroButton1.Click += new System.EventHandler(this.MetroButton1_Click_1);
             // 
-            // metroButton3
-            // 
-            this.metroButton3.Location = new System.Drawing.Point(322, 49);
-            this.metroButton3.Name = "metroButton3";
-            this.metroButton3.Size = new System.Drawing.Size(462, 377);
-            this.metroButton3.TabIndex = 3;
-            this.metroButton3.Text = "metroButton3";
-            this.metroButton3.UseSelectable = true;
-            this.metroButton3.Click += new System.EventHandler(this.MetroButton3_Click);
-            // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -304,7 +292,6 @@
         private MetroFramework.Controls.MetroTextBox metroTextBox1;
         private MetroFramework.Controls.MetroLabel metroLabel2;
         private MetroFramework.Controls.MetroCheckBox metroCheckBox1;
-        private MetroFramework.Controls.MetroButton metroButton3;
     }
 }
 
