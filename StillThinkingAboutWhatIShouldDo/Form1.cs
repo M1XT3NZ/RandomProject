@@ -11,6 +11,9 @@ using MetroFramework;
 using MetroFramework.Forms;
 using System.Threading;
 using System.Diagnostics;
+
+using System.IO;
+
 namespace StillThinkingAboutWhatIShouldDo
 {
     public partial class Form1 : MetroForm
@@ -90,7 +93,18 @@ namespace StillThinkingAboutWhatIShouldDo
                 }
                 else if (metroComboBox1.SelectedIndex.Equals(1))
                 {
-                    Process.Start("Hello_World");
+                    string file = "Hello_world";
+                    File.Exists(file);
+                    if (File.Exists(file))
+                    {
+                        Process.Start("Hello_World");
+                    }
+                    else
+                    {
+                        MetroMessageBox.Show(this,"The File doesnt Exist", "ATTENTION", MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                        return;
+                    }
+                    
                 }
             }
             if (metroCheckBox1.Checked == false)
