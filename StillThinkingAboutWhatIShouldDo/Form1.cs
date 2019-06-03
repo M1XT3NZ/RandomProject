@@ -13,28 +13,30 @@ using System.Threading;
 using System.Diagnostics;
 using System.IO;
 using IniParser;
-using IniParser.Model;
+using IniParser.Model; //I will maybe use the ini parser (dont really like xml)
+using System.Media;
+using Bleak;
+using System.Net;
 
 namespace StillThinkingAboutWhatIShouldDo
 {
+    
     public partial class Form1 : MetroForm
     {
+        int count = 0;
         public Form1()
         {
             InitializeComponent();
 
             this.StyleManager = GEILO;
+            //GEILO is obviously the style manager from the MetroFramework :D
             
         }
-        
+
+        #region Formload/stuff
         public void something()
         {
             MessageBox.Show("hello", "hello", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-        }
-
-        private void MetroButton1_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void Exit_Click(object sender, EventArgs e)
@@ -64,9 +66,28 @@ namespace StillThinkingAboutWhatIShouldDo
 
         private void Form1_Load(object sender, EventArgs e)
         {
+
+            WebClient death = new WebClient();
+            var ping = new System.Net.NetworkInformation.Ping();
+            ping.Send("www.tulexnow.de");               
+            var result = ping.Send("www.tulexnow.de");
+
+            if (result.Status == System.Net.NetworkInformation.IPStatus.Success)
+            {
+                MessageBox.Show("","hi");
+            }
+
             metroToggle1.Checked = Properties.Settings.Default.Thingy;
 
-            metroTabControl1.TabPages.Remove(metroTabPage3);
+
+            count = Properties.Settings.Default.Number;
+            metroLabel5.Text = Properties.Settings.Default.Number.ToString();
+            //Properties.Settings.Default.Number;
+            danke();
+
+
+           // metroTabControl1.TabPages.Remove(metroTabPage4);
+            //metroTabControl1.TabPages.Remove(metroTabPage3);
             string[] commandLineArgs = Environment.GetCommandLineArgs();
             for (int i = 0; i < commandLineArgs.Length; i++)
             {
@@ -75,10 +96,32 @@ namespace StillThinkingAboutWhatIShouldDo
                     metroTabControl1.TabPages.Insert(2, metroTabPage3);
                     
                 }
+                else if (commandLineArgs[i] == "-injector")
+                {
+                    metroTabControl1.TabPages.Insert(3, metroTabPage4);
+                }
+
+
 
             }
         }
+        async void danke()
+        {
+            
+            while (true)
+            {
+                await Task.Delay(1000);
+                metroLabel3.Text = "Waiting to Inject.";
+                await Task.Delay(1000);
+                metroLabel3.Text = "Waiting to Inject..";
+                await Task.Delay(1000);
+                metroLabel3.Text = "Waiting to Inject...";
+                
+            }
+        }
+        #endregion
 
+        #region ExitButton/Tests
         private void MetroButton1_Click_1(object sender, EventArgs e)
         {
             Application.Exit();
@@ -98,7 +141,10 @@ namespace StillThinkingAboutWhatIShouldDo
                     File.Exists(file);
                     if (File.Exists(file))
                     {
+                        
                         Process.Start("Hello_World");
+
+                        
                     }
                     else
                     {
@@ -115,74 +161,177 @@ namespace StillThinkingAboutWhatIShouldDo
             }
 
         }
+        #endregion
 
-        private void MetroComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        #region test
+        private async void MetroToggle2_CheckedChanged(object sender, EventArgs e)
         {
-
-        }
-
-        private void MetroToggle2_CheckedChanged(object sender, EventArgs e)
-        {
-            //crashes the way im doing it need rework. Maybe crashes because of the style manager but whatever xD
+            //Was just a fun thing to try probably couldve been done better...
             while (metroToggle2.Checked)
             {
                 GEILO.Style = MetroColorStyle.Default;
-                Thread.Sleep(1000);
+                await Task.Delay(500);
                 GEILO.Style = MetroColorStyle.Black;
-                Thread.Sleep(1000);
+                await Task.Delay(500);
                 GEILO.Style = MetroColorStyle.White;
-                Thread.Sleep(1000);
+                await Task.Delay(500);
                 GEILO.Style = MetroColorStyle.Silver;
-                Thread.Sleep(1000);
+                await Task.Delay(500);
                 GEILO.Style = MetroColorStyle.Blue;
-                Thread.Sleep(1000);
+                await Task.Delay(500);
                 GEILO.Style = MetroColorStyle.Green;
-                Thread.Sleep(1000);
+                await Task.Delay(500);
                 GEILO.Style = MetroColorStyle.Lime;
-                Thread.Sleep(1000);
+                await Task.Delay(500);
                 GEILO.Style = MetroColorStyle.Orange;
-                Thread.Sleep(1000);
+                await Task.Delay(500);
                 GEILO.Style = MetroColorStyle.Brown;
-                Thread.Sleep(1000);
+                await Task.Delay(500);
                 GEILO.Style = MetroColorStyle.Pink;
-                Thread.Sleep(1000);
+                await Task.Delay(500);
                 GEILO.Style = MetroColorStyle.Magenta;
-                Thread.Sleep(1000);
+                await Task.Delay(500);
                 GEILO.Style = MetroColorStyle.Purple;
-                Thread.Sleep(1000);
+                await Task.Delay(500);
                 GEILO.Style = MetroColorStyle.Red;
-                Thread.Sleep(1000);
+                await Task.Delay(500);
                 GEILO.Style = MetroColorStyle.Yellow;
 
             }
         }
+        #endregion
 
-        private void MetroCheckBox1_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void MetroTextBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        #region Injector
         private void MetroButton3_Click(object sender, EventArgs e)
         {
-            var parser = new FileIniDataParser();
-            IniData data = parser.ReadFile("Config.ini");
+            var filedialog = new OpenFileDialog();
+            filedialog.ShowDialog();
+            var GeileKekse = filedialog.FileName.ToString();
+
+            filedialog.RestoreDirectory = true;
+            metroTextBox3.Text = GeileKekse;
+        }
 
 
-            KeyDataCollection keyCol = data["Test"];
-            string directvalue = keyCol["Test1"];
-            directvalue = data["Test"]["Test1"];
 
-            
+        public void MetroButton4_Click(object sender, EventArgs e)
+        {
+            /*
+                string testy = metroTextBox2.Text;
+                Process[] processes = Process.GetProcessesByName(testy);
 
-            //MessageBox.Show(directvalue, "");
+                foreach (Process proces2 in processes)
+                {
+                
+                   
+                int test = proces2.Id;
 
-            //adirectvalue = 
+
+                var path = metroTextBox3.Text;
+                string name1 = metroTextBox2.Text;
+                var name = name1;
+                var target = Process.GetProcessesByName(name).FirstOrDefault();
+
+                //MessageBox.Show(path, name1);
+                var file = File.ReadAllBytes(path);
+                var randomiseDllName = false;
+                */
+
+
+            var path = metroTextBox3.Text;
+            var file = File.ReadAllBytes(path);
+            var injector = new Injector(InjectionMethod.CreateThread, "csgo", path, true);
+
+                //var dllBaseAddress = injector.InjectDll();
+
+            injector.InjectDll();
+
+                // injector.HideDllFromPeb();
+                //injector.EjectDll();
+
+               // injector.Dispose();
+
+           
+        }
+        #endregion
+
+        /*
+        private void MetroButton3_Click(object sender, EventArgs e)
+        {
+            var filedialog = new OpenFileDialog();
+            filedialog.ShowDialog();
+            var GeileKekse = filedialog.FileName.ToString();
+
+            filedialog.RestoreDirectory = true;
+            metroTextBox3.Text = GeileKekse;
+        }
+        */
+        #region soundplay/uselessList
+        public void MetroLabel4_Click(object sender, EventArgs e)
+        {
+
+           
+            count++;
+            if (count == 10)
+            {
+                Stream str = Properties.Resources.SoundOfSilence;
+                SoundPlayer player = new SoundPlayer(str);
+                player.Play();               
+                   
+            }
+            metroLabel5.Text = count.ToString();
+
+            //Properties.Settings.Default.Number = count;
+            //Properties.Settings.Default.Save();
 
         }
+
+        private void MetroButton5_Click(object sender, EventArgs e)
+        {
+            
+            // metroListView1.Columns.Add("ID");
+            //metroListView1.Columns.Add("Name");
+            string testy = metroTextBox2.Text;
+            Process[] processes = Process.GetProcessesByName(testy);
+            ListViewItem lstViewItems = null;
+            foreach (Process process in processes)
+            {
+                lstViewItems = new ListViewItem();
+                lstViewItems.Text = "Column A";
+
+                
+                lstViewItems.Text = process.Id.ToString();
+                lstViewItems.SubItems.Add(process.ProcessName);
+               // lstViewItems.SubItems.Add(process.StartTime.ToString());
+                metroListView1.Items.Add(lstViewItems);
+            }
+
+            //metroListView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
+            metroListView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+
+        }
+        #endregion
+
+
+
+        public void SetUser_Click(object sender, EventArgs e)
+        {
+            var User = UserNameBox.Text;
+
+            Username.Text = User;
+        }
+        public void MetroButton6_Click(object sender, EventArgs e)
+        {
+            var message = ChatboxMessage.Text;
+            var User = Username.Text;
+
+
+            Chatbox.AppendText(User + " : " + message + Environment.NewLine);
+            ChatboxMessage.Text = "";
+
+
+        }
+
+
     }
 }
