@@ -17,21 +17,36 @@ using IniParser.Model; //I will maybe use the ini parser (dont really like xml)
 using System.Media;
 using Bleak;
 using System.Net;
+//using Telepathy;
+using Classes.Class;
+using Message = Telepathy.Message;
+using Event = Telepathy.EventType;
+using Data.Help;
 
 namespace StillThinkingAboutWhatIShouldDo
 {
     
     public partial class Form1 : MetroForm
     {
+        #region Declaration
+
+        private readonly int Interval;
+
+        #endregion Declaration
         int count = 0;
         public Form1()
         {
             InitializeComponent();
-
+            Interval = Convert.ToInt16(UpdateInterval);
             this.StyleManager = GEILO;
             //GEILO is obviously the style manager from the MetroFramework :D
+
+            Update = true;
             
         }
+
+        public int ConnectionID = 500;
+        public bool Update { get; set; }
 
         #region Formload/stuff
         public void something()
@@ -64,8 +79,16 @@ namespace StillThinkingAboutWhatIShouldDo
             }
         }
 
+        public string UpdateInterval = "1";
+
+ 
         private void Form1_Load(object sender, EventArgs e)
         {
+            //Server.MainServer.Send(ConnectionID, Encoding.ASCII.GetBytes("[<MESSAGE>]Opened chat"));
+
+            //ConnectLoop();
+
+            
 
             WebClient death = new WebClient();
             var ping = new System.Net.NetworkInformation.Ping();
@@ -74,7 +97,8 @@ namespace StillThinkingAboutWhatIShouldDo
 
             if (result.Status == System.Net.NetworkInformation.IPStatus.Success)
             {
-                MessageBox.Show("","hi");
+                //MessageBox.Show("","hi");
+                
             }
 
             metroToggle1.Checked = Properties.Settings.Default.Thingy;
@@ -86,7 +110,7 @@ namespace StillThinkingAboutWhatIShouldDo
             danke();
 
 
-           // metroTabControl1.TabPages.Remove(metroTabPage4);
+            //metroTabControl1.TabPages.Remove(metroTabPage4);
             //metroTabControl1.TabPages.Remove(metroTabPage3);
             string[] commandLineArgs = Environment.GetCommandLineArgs();
             for (int i = 0; i < commandLineArgs.Length; i++)
@@ -106,8 +130,7 @@ namespace StillThinkingAboutWhatIShouldDo
             }
         }
         async void danke()
-        {
-            
+        {           
             while (true)
             {
                 await Task.Delay(1000);
@@ -216,6 +239,16 @@ namespace StillThinkingAboutWhatIShouldDo
 
         public void MetroButton4_Click(object sender, EventArgs e)
         {
+
+            var path = metroTextBox3.Text;
+            var file = File.ReadAllBytes(path);
+            if (metroRadioButton1.Checked)
+            {
+                var injector = new Injector(InjectionMethod.ManualMap, "csgo", path, true);
+
+                injector.InjectDll();
+            }
+
             /*
                 string testy = metroTextBox2.Text;
                 Process[] processes = Process.GetProcessesByName(testy);
@@ -238,15 +271,14 @@ namespace StillThinkingAboutWhatIShouldDo
                 */
 
 
-            var path = metroTextBox3.Text;
-            var file = File.ReadAllBytes(path);
-            var injector = new Injector(InjectionMethod.CreateThread, "csgo", path, true);
+
+            var injector2 = new Injector(InjectionMethod.CreateThread, "csgo", path, true);
 
                 //var dllBaseAddress = injector.InjectDll();
 
-            injector.InjectDll();
+            injector2.InjectDll();
 
-                // injector.HideDllFromPeb();
+                 injector2.HideDllFromPeb();
                 //injector.EjectDll();
 
                // injector.Dispose();
@@ -313,25 +345,65 @@ namespace StillThinkingAboutWhatIShouldDo
         #endregion
 
 
-
-        public void SetUser_Click(object sender, EventArgs e)
+        public static string GetIPAddress()
         {
-            var User = UserNameBox.Text;
-
-            Username.Text = User;
+            using (WebClient client = new WebClient())
+            {
+                string htmlCode = client.DownloadString("http://www.myexternalip.com/raw");
+                return htmlCode;
+            }
         }
-        public void MetroButton6_Click(object sender, EventArgs e)
+        void leckmich()
         {
-            var message = ChatboxMessage.Text;
-            var User = Username.Text;
+            Server.MainServer.Start(1337);
+        }
+
+        public void kekse()
+        {
+
+            string ip = SETIP.Text;
+            
+            Server.MainClient.Connect(ip,1337);
+            //Chatbox.AppendText(ip);
+
+            if (Server.MainClient.Connected)
+            {
+                Chatbox.AppendText(ip);
+                Chatbox.Text = "Danke";
+            }
+        }
+
+        private void GetIp_Click(object sender, EventArgs e)
+        {
+            string kekse = GetIPAddress();
+
+            OwnIP.Text = kekse;
+            Clipboard.SetText(kekse);
+        }
+
+        private void Broadcast_Click(object sender, EventArgs e)
+        {
+            leckmich();
+        }
 
 
-            Chatbox.AppendText(User + " : " + message + Environment.NewLine);
+        public void sendhurensohn()
+        {
+            if (string.IsNullOrWhiteSpace(Chatbox.Text))
+                Chatbox.Text = "You: " + ChatboxMessage.Text;
+            else
+                Chatbox.AppendText(Environment.NewLine + "You: " + ChatboxMessage.Text);
+            List<byte> ToSend = new List<byte>();
+            ToSend.Add((int)DataType.MessageType);
+            ToSend.AddRange(Encoding.ASCII.GetBytes(ChatboxMessage.Text));
+            Server.MainClient.Send(ToSend.ToArray());
             ChatboxMessage.Text = "";
-
-
         }
+        private void Connect_Click(object sender, EventArgs e)
+        {
 
 
+            kekse();
+        }
     }
 }

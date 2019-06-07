@@ -42,6 +42,7 @@
             this.metroToggle2 = new MetroFramework.Controls.MetroToggle();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.metroTabPage4 = new MetroFramework.Controls.MetroTabPage();
+            this.metroRadioButton1 = new MetroFramework.Controls.MetroRadioButton();
             this.metroListView1 = new MetroFramework.Controls.MetroListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -49,23 +50,33 @@
             this.metroButton3 = new MetroFramework.Controls.MetroButton();
             this.metroTextBox3 = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
-            this.metroCheckBox2 = new MetroFramework.Controls.MetroCheckBox();
             this.metroTextBox2 = new MetroFramework.Controls.MetroTextBox();
             this.metroButton4 = new MetroFramework.Controls.MetroButton();
             this.metroTabPage5 = new MetroFramework.Controls.MetroTabPage();
             this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.Chat = new MetroFramework.Controls.MetroTabPage();
-            this.SetUser = new MetroFramework.Controls.MetroButton();
-            this.UserNameBox = new MetroFramework.Controls.MetroTextBox();
-            this.Username = new MetroFramework.Controls.MetroLabel();
             this.Chatbox = new MetroFramework.Controls.MetroTextBox();
-            this.metroButton6 = new MetroFramework.Controls.MetroButton();
             this.ChatboxMessage = new MetroFramework.Controls.MetroTextBox();
+            this.chConnectionId = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.GEILO = new MetroFramework.Components.MetroStyleManager(this.components);
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.metroButton6 = new MetroFramework.Controls.MetroButton();
+            this.OwnIP = new MetroFramework.Controls.MetroLabel();
+            this.GetIp = new MetroFramework.Controls.MetroButton();
+            this.Broadcast = new MetroFramework.Controls.MetroButton();
+            this.SETIP = new MetroFramework.Controls.MetroTextBox();
+            this.Connect = new MetroFramework.Controls.MetroButton();
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
             this.metroTabPage2.SuspendLayout();
@@ -113,7 +124,7 @@
             this.metroTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.metroTabControl1.Location = new System.Drawing.Point(20, 60);
             this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 3;
+            this.metroTabControl1.SelectedIndex = 5;
             this.metroTabControl1.Size = new System.Drawing.Size(892, 356);
             this.metroTabControl1.TabIndex = 3;
             this.metroTabControl1.UseSelectable = true;
@@ -257,27 +268,37 @@
             // metroTabPage4
             // 
             this.metroTabPage4.AutoScroll = true;
+            this.metroTabPage4.Controls.Add(this.metroRadioButton1);
             this.metroTabPage4.Controls.Add(this.metroListView1);
             this.metroTabPage4.Controls.Add(this.metroButton5);
             this.metroTabPage4.Controls.Add(this.metroButton3);
             this.metroTabPage4.Controls.Add(this.metroTextBox3);
             this.metroTabPage4.Controls.Add(this.metroLabel3);
-            this.metroTabPage4.Controls.Add(this.metroCheckBox2);
             this.metroTabPage4.Controls.Add(this.metroTextBox2);
             this.metroTabPage4.Controls.Add(this.metroButton4);
             this.metroTabPage4.HorizontalScrollbar = true;
             this.metroTabPage4.HorizontalScrollbarBarColor = true;
             this.metroTabPage4.HorizontalScrollbarHighlightOnWheel = false;
             this.metroTabPage4.HorizontalScrollbarSize = 10;
-            this.metroTabPage4.Location = new System.Drawing.Point(4, 38);
+            this.metroTabPage4.Location = new System.Drawing.Point(4, 35);
             this.metroTabPage4.Name = "metroTabPage4";
-            this.metroTabPage4.Size = new System.Drawing.Size(884, 314);
+            this.metroTabPage4.Size = new System.Drawing.Size(884, 317);
             this.metroTabPage4.TabIndex = 3;
             this.metroTabPage4.Text = "Injector";
             this.metroTabPage4.VerticalScrollbar = true;
             this.metroTabPage4.VerticalScrollbarBarColor = true;
             this.metroTabPage4.VerticalScrollbarHighlightOnWheel = false;
             this.metroTabPage4.VerticalScrollbarSize = 10;
+            // 
+            // metroRadioButton1
+            // 
+            this.metroRadioButton1.AutoSize = true;
+            this.metroRadioButton1.Location = new System.Drawing.Point(222, 121);
+            this.metroRadioButton1.Name = "metroRadioButton1";
+            this.metroRadioButton1.Size = new System.Drawing.Size(87, 15);
+            this.metroRadioButton1.TabIndex = 11;
+            this.metroRadioButton1.Text = "ManualMap";
+            this.metroRadioButton1.UseSelectable = true;
             // 
             // metroListView1
             // 
@@ -365,16 +386,6 @@
             this.metroLabel3.TabIndex = 6;
             this.metroLabel3.Text = "Waiting to Inject...";
             // 
-            // metroCheckBox2
-            // 
-            this.metroCheckBox2.AutoSize = true;
-            this.metroCheckBox2.Location = new System.Drawing.Point(243, 64);
-            this.metroCheckBox2.Name = "metroCheckBox2";
-            this.metroCheckBox2.Size = new System.Drawing.Size(52, 15);
-            this.metroCheckBox2.TabIndex = 5;
-            this.metroCheckBox2.Text = "Inject";
-            this.metroCheckBox2.UseSelectable = true;
-            // 
             // metroTextBox2
             // 
             // 
@@ -426,9 +437,9 @@
             this.metroTabPage5.HorizontalScrollbarBarColor = true;
             this.metroTabPage5.HorizontalScrollbarHighlightOnWheel = false;
             this.metroTabPage5.HorizontalScrollbarSize = 10;
-            this.metroTabPage5.Location = new System.Drawing.Point(4, 35);
+            this.metroTabPage5.Location = new System.Drawing.Point(4, 38);
             this.metroTabPage5.Name = "metroTabPage5";
-            this.metroTabPage5.Size = new System.Drawing.Size(884, 317);
+            this.metroTabPage5.Size = new System.Drawing.Size(884, 314);
             this.metroTabPage5.TabIndex = 4;
             this.metroTabPage5.Text = "About";
             this.metroTabPage5.VerticalScrollbar = true;
@@ -457,11 +468,13 @@
             // 
             // Chat
             // 
-            this.Chat.Controls.Add(this.SetUser);
-            this.Chat.Controls.Add(this.UserNameBox);
-            this.Chat.Controls.Add(this.Username);
-            this.Chat.Controls.Add(this.Chatbox);
+            this.Chat.Controls.Add(this.Connect);
+            this.Chat.Controls.Add(this.SETIP);
+            this.Chat.Controls.Add(this.Broadcast);
+            this.Chat.Controls.Add(this.GetIp);
+            this.Chat.Controls.Add(this.OwnIP);
             this.Chat.Controls.Add(this.metroButton6);
+            this.Chat.Controls.Add(this.Chatbox);
             this.Chat.Controls.Add(this.ChatboxMessage);
             this.Chat.HorizontalScrollbarBarColor = true;
             this.Chat.HorizontalScrollbarHighlightOnWheel = false;
@@ -475,69 +488,13 @@
             this.Chat.VerticalScrollbarHighlightOnWheel = false;
             this.Chat.VerticalScrollbarSize = 10;
             // 
-            // SetUser
-            // 
-            this.SetUser.BackColor = System.Drawing.Color.Transparent;
-            this.SetUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.SetUser.FontSize = MetroFramework.MetroButtonSize.Medium;
-            this.SetUser.Highlight = true;
-            this.SetUser.Location = new System.Drawing.Point(744, 88);
-            this.SetUser.Name = "SetUser";
-            this.SetUser.Size = new System.Drawing.Size(137, 23);
-            this.SetUser.Style = MetroFramework.MetroColorStyle.White;
-            this.SetUser.TabIndex = 9;
-            this.SetUser.Text = "Set Username";
-            this.SetUser.UseSelectable = true;
-            this.SetUser.Click += new System.EventHandler(this.SetUser_Click);
-            // 
-            // UserNameBox
-            // 
-            // 
-            // 
-            // 
-            this.UserNameBox.CustomButton.Image = null;
-            this.UserNameBox.CustomButton.Location = new System.Drawing.Point(115, 1);
-            this.UserNameBox.CustomButton.Name = "";
-            this.UserNameBox.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.UserNameBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.UserNameBox.CustomButton.TabIndex = 1;
-            this.UserNameBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.UserNameBox.CustomButton.UseSelectable = true;
-            this.UserNameBox.CustomButton.Visible = false;
-            this.UserNameBox.Lines = new string[0];
-            this.UserNameBox.Location = new System.Drawing.Point(744, 59);
-            this.UserNameBox.MaxLength = 32767;
-            this.UserNameBox.Name = "UserNameBox";
-            this.UserNameBox.PasswordChar = '\0';
-            this.UserNameBox.PromptText = "Set Username";
-            this.UserNameBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.UserNameBox.SelectedText = "";
-            this.UserNameBox.SelectionLength = 0;
-            this.UserNameBox.SelectionStart = 0;
-            this.UserNameBox.ShortcutsEnabled = true;
-            this.UserNameBox.Size = new System.Drawing.Size(137, 23);
-            this.UserNameBox.TabIndex = 8;
-            this.UserNameBox.UseSelectable = true;
-            this.UserNameBox.WaterMark = "Set Username";
-            this.UserNameBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.UserNameBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // Username
-            // 
-            this.Username.AutoSize = true;
-            this.Username.Location = new System.Drawing.Point(792, 15);
-            this.Username.Name = "Username";
-            this.Username.Size = new System.Drawing.Size(35, 19);
-            this.Username.TabIndex = 7;
-            this.Username.Text = "User";
-            // 
             // Chatbox
             // 
             // 
             // 
             // 
             this.Chatbox.CustomButton.Image = null;
-            this.Chatbox.CustomButton.Location = new System.Drawing.Point(445, 1);
+            this.Chatbox.CustomButton.Location = new System.Drawing.Point(275, 1);
             this.Chatbox.CustomButton.Name = "";
             this.Chatbox.CustomButton.Size = new System.Drawing.Size(277, 277);
             this.Chatbox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -557,26 +514,11 @@
             this.Chatbox.SelectionLength = 0;
             this.Chatbox.SelectionStart = 0;
             this.Chatbox.ShortcutsEnabled = true;
-            this.Chatbox.Size = new System.Drawing.Size(723, 279);
+            this.Chatbox.Size = new System.Drawing.Size(553, 279);
             this.Chatbox.TabIndex = 6;
             this.Chatbox.UseSelectable = true;
             this.Chatbox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.Chatbox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // metroButton6
-            // 
-            this.metroButton6.BackColor = System.Drawing.Color.Transparent;
-            this.metroButton6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.metroButton6.FontSize = MetroFramework.MetroButtonSize.Medium;
-            this.metroButton6.Highlight = true;
-            this.metroButton6.Location = new System.Drawing.Point(732, 288);
-            this.metroButton6.Name = "metroButton6";
-            this.metroButton6.Size = new System.Drawing.Size(153, 23);
-            this.metroButton6.Style = MetroFramework.MetroColorStyle.White;
-            this.metroButton6.TabIndex = 5;
-            this.metroButton6.Text = "Send Message";
-            this.metroButton6.UseSelectable = true;
-            this.metroButton6.Click += new System.EventHandler(this.MetroButton6_Click);
             // 
             // ChatboxMessage
             // 
@@ -610,6 +552,14 @@
             this.ChatboxMessage.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.ChatboxMessage.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
+            // chConnectionId
+            // 
+            this.chConnectionId.Text = "IP";
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Name";
+            // 
             // GEILO
             // 
             this.GEILO.Owner = this;
@@ -636,6 +586,106 @@
             // timer1
             // 
             this.timer1.Interval = 8000;
+            // 
+            // metroButton6
+            // 
+            this.metroButton6.BackColor = System.Drawing.Color.Transparent;
+            this.metroButton6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.metroButton6.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.metroButton6.Highlight = true;
+            this.metroButton6.Location = new System.Drawing.Point(732, 288);
+            this.metroButton6.Name = "metroButton6";
+            this.metroButton6.Size = new System.Drawing.Size(84, 23);
+            this.metroButton6.Style = MetroFramework.MetroColorStyle.White;
+            this.metroButton6.TabIndex = 5;
+            this.metroButton6.Text = "Send";
+            this.metroButton6.UseSelectable = true;
+            // 
+            // OwnIP
+            // 
+            this.OwnIP.AutoSize = true;
+            this.OwnIP.Location = new System.Drawing.Point(579, 196);
+            this.OwnIP.Name = "OwnIP";
+            this.OwnIP.Size = new System.Drawing.Size(101, 19);
+            this.OwnIP.TabIndex = 7;
+            this.OwnIP.Text = "PRESS BUTTON";
+            // 
+            // GetIp
+            // 
+            this.GetIp.BackColor = System.Drawing.Color.Transparent;
+            this.GetIp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.GetIp.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.GetIp.Highlight = true;
+            this.GetIp.Location = new System.Drawing.Point(579, 227);
+            this.GetIp.Name = "GetIp";
+            this.GetIp.Size = new System.Drawing.Size(84, 23);
+            this.GetIp.Style = MetroFramework.MetroColorStyle.White;
+            this.GetIp.TabIndex = 8;
+            this.GetIp.Text = "GET IP";
+            this.GetIp.UseSelectable = true;
+            this.GetIp.Click += new System.EventHandler(this.GetIp_Click);
+            // 
+            // Broadcast
+            // 
+            this.Broadcast.BackColor = System.Drawing.Color.Transparent;
+            this.Broadcast.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.Broadcast.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.Broadcast.Highlight = true;
+            this.Broadcast.Location = new System.Drawing.Point(714, 227);
+            this.Broadcast.Name = "Broadcast";
+            this.Broadcast.Size = new System.Drawing.Size(84, 23);
+            this.Broadcast.Style = MetroFramework.MetroColorStyle.White;
+            this.Broadcast.TabIndex = 9;
+            this.Broadcast.Text = "Broadcast";
+            this.Broadcast.UseSelectable = true;
+            this.Broadcast.Click += new System.EventHandler(this.Broadcast_Click);
+            // 
+            // SETIP
+            // 
+            // 
+            // 
+            // 
+            this.SETIP.CustomButton.Image = null;
+            this.SETIP.CustomButton.Location = new System.Drawing.Point(154, 1);
+            this.SETIP.CustomButton.Name = "";
+            this.SETIP.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.SETIP.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.SETIP.CustomButton.TabIndex = 1;
+            this.SETIP.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.SETIP.CustomButton.UseSelectable = true;
+            this.SETIP.CustomButton.Visible = false;
+            this.SETIP.Lines = new string[0];
+            this.SETIP.Location = new System.Drawing.Point(562, 3);
+            this.SETIP.MaxLength = 32767;
+            this.SETIP.Name = "SETIP";
+            this.SETIP.PasswordChar = '\0';
+            this.SETIP.PromptText = "Set IP of FrIEND";
+            this.SETIP.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.SETIP.SelectedText = "";
+            this.SETIP.SelectionLength = 0;
+            this.SETIP.SelectionStart = 0;
+            this.SETIP.ShortcutsEnabled = true;
+            this.SETIP.Size = new System.Drawing.Size(176, 23);
+            this.SETIP.TabIndex = 10;
+            this.SETIP.UseSelectable = true;
+            this.SETIP.WaterMark = "Set IP of FrIEND";
+            this.SETIP.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.SETIP.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // Connect
+            // 
+            this.Connect.BackColor = System.Drawing.Color.Transparent;
+            this.Connect.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.Connect.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.Connect.Highlight = true;
+            this.Connect.Location = new System.Drawing.Point(596, 32);
+            this.Connect.Name = "Connect";
+            this.Connect.Size = new System.Drawing.Size(84, 23);
+            this.Connect.Style = MetroFramework.MetroColorStyle.White;
+            this.Connect.TabIndex = 11;
+            this.Connect.Text = "Connect";
+            this.Connect.UseSelectable = true;
+            this.Connect.Click += new System.EventHandler(this.Connect_Click);
             // 
             // Form1
             // 
@@ -692,7 +742,6 @@
         private MetroFramework.Controls.MetroTextBox metroTextBox2;
         private MetroFramework.Controls.MetroButton metroButton4;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private MetroFramework.Controls.MetroCheckBox metroCheckBox2;
         private MetroFramework.Controls.MetroLabel metroLabel3;
         private MetroFramework.Controls.MetroButton metroButton3;
         private MetroFramework.Controls.MetroTextBox metroTextBox3;
@@ -705,12 +754,24 @@
         public System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.Timer timer1;
         private MetroFramework.Controls.MetroTabPage Chat;
-        public MetroFramework.Controls.MetroButton metroButton6;
         private MetroFramework.Controls.MetroTextBox ChatboxMessage;
         private MetroFramework.Controls.MetroTextBox Chatbox;
-        public MetroFramework.Controls.MetroButton SetUser;
-        private MetroFramework.Controls.MetroTextBox UserNameBox;
-        private MetroFramework.Controls.MetroLabel Username;
+        private MetroFramework.Controls.MetroRadioButton metroRadioButton1;
+        private System.Windows.Forms.ColumnHeader chConnectionId;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.ColumnHeader columnHeader5;
+        private System.Windows.Forms.ColumnHeader columnHeader6;
+        private System.Windows.Forms.ColumnHeader columnHeader7;
+        private System.Windows.Forms.ColumnHeader columnHeader8;
+        private System.Windows.Forms.ColumnHeader columnHeader9;
+        private System.Windows.Forms.ColumnHeader columnHeader10;
+        private System.Windows.Forms.ColumnHeader columnHeader11;
+        public MetroFramework.Controls.MetroButton metroButton6;
+        public MetroFramework.Controls.MetroButton GetIp;
+        private MetroFramework.Controls.MetroLabel OwnIP;
+        public MetroFramework.Controls.MetroButton Broadcast;
+        private MetroFramework.Controls.MetroTextBox SETIP;
+        public MetroFramework.Controls.MetroButton Connect;
     }
 }
 
