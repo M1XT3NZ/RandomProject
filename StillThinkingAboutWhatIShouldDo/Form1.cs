@@ -49,10 +49,6 @@ namespace StillThinkingAboutWhatIShouldDo
         public bool Update { get; set; }
 
         #region Formload/stuff
-        public void something()
-        {
-            MessageBox.Show("hello", "hello", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-        }
 
         private void Exit_Click(object sender, EventArgs e)
         {
@@ -287,17 +283,7 @@ namespace StillThinkingAboutWhatIShouldDo
         }
         #endregion
 
-        /*
-        private void MetroButton3_Click(object sender, EventArgs e)
-        {
-            var filedialog = new OpenFileDialog();
-            filedialog.ShowDialog();
-            var GeileKekse = filedialog.FileName.ToString();
 
-            filedialog.RestoreDirectory = true;
-            metroTextBox3.Text = GeileKekse;
-        }
-        */
         #region soundplay/uselessList
         public void MetroLabel4_Click(object sender, EventArgs e)
         {
@@ -353,57 +339,15 @@ namespace StillThinkingAboutWhatIShouldDo
                 return htmlCode;
             }
         }
-        void leckmich()
-        {
-            Server.MainServer.Start(1337);
-        }
 
-        public void kekse()
-        {
 
-            string ip = SETIP.Text;
-            
-            Server.MainClient.Connect(ip,1337);
-            //Chatbox.AppendText(ip);
-
-            if (Server.MainClient.Connected)
-            {
-                Chatbox.AppendText(ip);
-                Chatbox.Text = "Danke";
-            }
-        }
 
         private void GetIp_Click(object sender, EventArgs e)
         {
             string kekse = GetIPAddress();
-
-            OwnIP.Text = kekse;
+            
             Clipboard.SetText(kekse);
         }
 
-        private void Broadcast_Click(object sender, EventArgs e)
-        {
-            leckmich();
-        }
-
-
-        public void sendhurensohn()
-        {
-            if (string.IsNullOrWhiteSpace(Chatbox.Text))
-                Chatbox.Text = "You: " + ChatboxMessage.Text;
-            else
-                Chatbox.AppendText(Environment.NewLine + "You: " + ChatboxMessage.Text);
-            List<byte> ToSend = new List<byte>();
-            ToSend.Add((int)DataType.MessageType);
-            ToSend.AddRange(Encoding.ASCII.GetBytes(ChatboxMessage.Text));
-            Server.MainClient.Send(ToSend.ToArray());
-            ChatboxMessage.Text = "";
-        }
-        private void Connect_Click(object sender, EventArgs e)
-        {
-
-
-            kekse();
-        }
     }
 }

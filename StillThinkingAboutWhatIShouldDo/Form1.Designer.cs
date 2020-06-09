@@ -56,8 +56,6 @@
             this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.Chat = new MetroFramework.Controls.MetroTabPage();
-            this.Chatbox = new MetroFramework.Controls.MetroTextBox();
-            this.ChatboxMessage = new MetroFramework.Controls.MetroTextBox();
             this.chConnectionId = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.GEILO = new MetroFramework.Components.MetroStyleManager(this.components);
@@ -71,19 +69,12 @@
             this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.metroButton6 = new MetroFramework.Controls.MetroButton();
-            this.OwnIP = new MetroFramework.Controls.MetroLabel();
-            this.GetIp = new MetroFramework.Controls.MetroButton();
-            this.Broadcast = new MetroFramework.Controls.MetroButton();
-            this.SETIP = new MetroFramework.Controls.MetroTextBox();
-            this.Connect = new MetroFramework.Controls.MetroButton();
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
             this.metroTabPage2.SuspendLayout();
             this.metroTabPage3.SuspendLayout();
             this.metroTabPage4.SuspendLayout();
             this.metroTabPage5.SuspendLayout();
-            this.Chat.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GEILO)).BeginInit();
             this.SuspendLayout();
             // 
@@ -437,9 +428,9 @@
             this.metroTabPage5.HorizontalScrollbarBarColor = true;
             this.metroTabPage5.HorizontalScrollbarHighlightOnWheel = false;
             this.metroTabPage5.HorizontalScrollbarSize = 10;
-            this.metroTabPage5.Location = new System.Drawing.Point(4, 38);
+            this.metroTabPage5.Location = new System.Drawing.Point(4, 35);
             this.metroTabPage5.Name = "metroTabPage5";
-            this.metroTabPage5.Size = new System.Drawing.Size(884, 314);
+            this.metroTabPage5.Size = new System.Drawing.Size(884, 317);
             this.metroTabPage5.TabIndex = 4;
             this.metroTabPage5.Text = "About";
             this.metroTabPage5.VerticalScrollbar = true;
@@ -468,14 +459,6 @@
             // 
             // Chat
             // 
-            this.Chat.Controls.Add(this.Connect);
-            this.Chat.Controls.Add(this.SETIP);
-            this.Chat.Controls.Add(this.Broadcast);
-            this.Chat.Controls.Add(this.GetIp);
-            this.Chat.Controls.Add(this.OwnIP);
-            this.Chat.Controls.Add(this.metroButton6);
-            this.Chat.Controls.Add(this.Chatbox);
-            this.Chat.Controls.Add(this.ChatboxMessage);
             this.Chat.HorizontalScrollbarBarColor = true;
             this.Chat.HorizontalScrollbarHighlightOnWheel = false;
             this.Chat.HorizontalScrollbarSize = 10;
@@ -487,70 +470,6 @@
             this.Chat.VerticalScrollbarBarColor = true;
             this.Chat.VerticalScrollbarHighlightOnWheel = false;
             this.Chat.VerticalScrollbarSize = 10;
-            // 
-            // Chatbox
-            // 
-            // 
-            // 
-            // 
-            this.Chatbox.CustomButton.Image = null;
-            this.Chatbox.CustomButton.Location = new System.Drawing.Point(275, 1);
-            this.Chatbox.CustomButton.Name = "";
-            this.Chatbox.CustomButton.Size = new System.Drawing.Size(277, 277);
-            this.Chatbox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.Chatbox.CustomButton.TabIndex = 1;
-            this.Chatbox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.Chatbox.CustomButton.UseSelectable = true;
-            this.Chatbox.CustomButton.Visible = false;
-            this.Chatbox.Lines = new string[0];
-            this.Chatbox.Location = new System.Drawing.Point(3, 3);
-            this.Chatbox.MaxLength = 32767;
-            this.Chatbox.Multiline = true;
-            this.Chatbox.Name = "Chatbox";
-            this.Chatbox.PasswordChar = '\0';
-            this.Chatbox.ReadOnly = true;
-            this.Chatbox.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.Chatbox.SelectedText = "";
-            this.Chatbox.SelectionLength = 0;
-            this.Chatbox.SelectionStart = 0;
-            this.Chatbox.ShortcutsEnabled = true;
-            this.Chatbox.Size = new System.Drawing.Size(553, 279);
-            this.Chatbox.TabIndex = 6;
-            this.Chatbox.UseSelectable = true;
-            this.Chatbox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.Chatbox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // ChatboxMessage
-            // 
-            // 
-            // 
-            // 
-            this.ChatboxMessage.CustomButton.Image = null;
-            this.ChatboxMessage.CustomButton.Location = new System.Drawing.Point(701, 1);
-            this.ChatboxMessage.CustomButton.Name = "";
-            this.ChatboxMessage.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.ChatboxMessage.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.ChatboxMessage.CustomButton.TabIndex = 1;
-            this.ChatboxMessage.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.ChatboxMessage.CustomButton.UseSelectable = true;
-            this.ChatboxMessage.CustomButton.Visible = false;
-            this.ChatboxMessage.Lines = new string[0];
-            this.ChatboxMessage.Location = new System.Drawing.Point(3, 288);
-            this.ChatboxMessage.MaxLength = 32767;
-            this.ChatboxMessage.Name = "ChatboxMessage";
-            this.ChatboxMessage.PasswordChar = '\0';
-            this.ChatboxMessage.PromptText = "Type a Message to send others <3";
-            this.ChatboxMessage.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.ChatboxMessage.SelectedText = "";
-            this.ChatboxMessage.SelectionLength = 0;
-            this.ChatboxMessage.SelectionStart = 0;
-            this.ChatboxMessage.ShortcutsEnabled = true;
-            this.ChatboxMessage.Size = new System.Drawing.Size(723, 23);
-            this.ChatboxMessage.TabIndex = 2;
-            this.ChatboxMessage.UseSelectable = true;
-            this.ChatboxMessage.WaterMark = "Type a Message to send others <3";
-            this.ChatboxMessage.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.ChatboxMessage.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // chConnectionId
             // 
@@ -587,106 +506,6 @@
             // 
             this.timer1.Interval = 8000;
             // 
-            // metroButton6
-            // 
-            this.metroButton6.BackColor = System.Drawing.Color.Transparent;
-            this.metroButton6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.metroButton6.FontSize = MetroFramework.MetroButtonSize.Medium;
-            this.metroButton6.Highlight = true;
-            this.metroButton6.Location = new System.Drawing.Point(732, 288);
-            this.metroButton6.Name = "metroButton6";
-            this.metroButton6.Size = new System.Drawing.Size(84, 23);
-            this.metroButton6.Style = MetroFramework.MetroColorStyle.White;
-            this.metroButton6.TabIndex = 5;
-            this.metroButton6.Text = "Send";
-            this.metroButton6.UseSelectable = true;
-            // 
-            // OwnIP
-            // 
-            this.OwnIP.AutoSize = true;
-            this.OwnIP.Location = new System.Drawing.Point(579, 196);
-            this.OwnIP.Name = "OwnIP";
-            this.OwnIP.Size = new System.Drawing.Size(101, 19);
-            this.OwnIP.TabIndex = 7;
-            this.OwnIP.Text = "PRESS BUTTON";
-            // 
-            // GetIp
-            // 
-            this.GetIp.BackColor = System.Drawing.Color.Transparent;
-            this.GetIp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.GetIp.FontSize = MetroFramework.MetroButtonSize.Medium;
-            this.GetIp.Highlight = true;
-            this.GetIp.Location = new System.Drawing.Point(579, 227);
-            this.GetIp.Name = "GetIp";
-            this.GetIp.Size = new System.Drawing.Size(84, 23);
-            this.GetIp.Style = MetroFramework.MetroColorStyle.White;
-            this.GetIp.TabIndex = 8;
-            this.GetIp.Text = "GET IP";
-            this.GetIp.UseSelectable = true;
-            this.GetIp.Click += new System.EventHandler(this.GetIp_Click);
-            // 
-            // Broadcast
-            // 
-            this.Broadcast.BackColor = System.Drawing.Color.Transparent;
-            this.Broadcast.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.Broadcast.FontSize = MetroFramework.MetroButtonSize.Medium;
-            this.Broadcast.Highlight = true;
-            this.Broadcast.Location = new System.Drawing.Point(714, 227);
-            this.Broadcast.Name = "Broadcast";
-            this.Broadcast.Size = new System.Drawing.Size(84, 23);
-            this.Broadcast.Style = MetroFramework.MetroColorStyle.White;
-            this.Broadcast.TabIndex = 9;
-            this.Broadcast.Text = "Broadcast";
-            this.Broadcast.UseSelectable = true;
-            this.Broadcast.Click += new System.EventHandler(this.Broadcast_Click);
-            // 
-            // SETIP
-            // 
-            // 
-            // 
-            // 
-            this.SETIP.CustomButton.Image = null;
-            this.SETIP.CustomButton.Location = new System.Drawing.Point(154, 1);
-            this.SETIP.CustomButton.Name = "";
-            this.SETIP.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.SETIP.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.SETIP.CustomButton.TabIndex = 1;
-            this.SETIP.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.SETIP.CustomButton.UseSelectable = true;
-            this.SETIP.CustomButton.Visible = false;
-            this.SETIP.Lines = new string[0];
-            this.SETIP.Location = new System.Drawing.Point(562, 3);
-            this.SETIP.MaxLength = 32767;
-            this.SETIP.Name = "SETIP";
-            this.SETIP.PasswordChar = '\0';
-            this.SETIP.PromptText = "Set IP of FrIEND";
-            this.SETIP.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.SETIP.SelectedText = "";
-            this.SETIP.SelectionLength = 0;
-            this.SETIP.SelectionStart = 0;
-            this.SETIP.ShortcutsEnabled = true;
-            this.SETIP.Size = new System.Drawing.Size(176, 23);
-            this.SETIP.TabIndex = 10;
-            this.SETIP.UseSelectable = true;
-            this.SETIP.WaterMark = "Set IP of FrIEND";
-            this.SETIP.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.SETIP.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // Connect
-            // 
-            this.Connect.BackColor = System.Drawing.Color.Transparent;
-            this.Connect.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.Connect.FontSize = MetroFramework.MetroButtonSize.Medium;
-            this.Connect.Highlight = true;
-            this.Connect.Location = new System.Drawing.Point(596, 32);
-            this.Connect.Name = "Connect";
-            this.Connect.Size = new System.Drawing.Size(84, 23);
-            this.Connect.Style = MetroFramework.MetroColorStyle.White;
-            this.Connect.TabIndex = 11;
-            this.Connect.Text = "Connect";
-            this.Connect.UseSelectable = true;
-            this.Connect.Click += new System.EventHandler(this.Connect_Click);
-            // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -716,8 +535,6 @@
             this.metroTabPage4.PerformLayout();
             this.metroTabPage5.ResumeLayout(false);
             this.metroTabPage5.PerformLayout();
-            this.Chat.ResumeLayout(false);
-            this.Chat.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GEILO)).EndInit();
             this.ResumeLayout(false);
 
@@ -754,8 +571,6 @@
         public System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.Timer timer1;
         private MetroFramework.Controls.MetroTabPage Chat;
-        private MetroFramework.Controls.MetroTextBox ChatboxMessage;
-        private MetroFramework.Controls.MetroTextBox Chatbox;
         private MetroFramework.Controls.MetroRadioButton metroRadioButton1;
         private System.Windows.Forms.ColumnHeader chConnectionId;
         private System.Windows.Forms.ColumnHeader columnHeader4;
@@ -766,12 +581,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader9;
         private System.Windows.Forms.ColumnHeader columnHeader10;
         private System.Windows.Forms.ColumnHeader columnHeader11;
-        public MetroFramework.Controls.MetroButton metroButton6;
-        public MetroFramework.Controls.MetroButton GetIp;
-        private MetroFramework.Controls.MetroLabel OwnIP;
-        public MetroFramework.Controls.MetroButton Broadcast;
-        private MetroFramework.Controls.MetroTextBox SETIP;
-        public MetroFramework.Controls.MetroButton Connect;
     }
 }
 
