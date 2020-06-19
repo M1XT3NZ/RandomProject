@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.28922.388
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StillThinkingAboutWhatIShouldDo", "StillThinkingAboutWhatIShouldDo\StillThinkingAboutWhatIShouldDo.csproj", "{B104CF40-67BB-48D1-9F9F-061559528157}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hello World", "C:\Users\Michael\source\repos\Hello World\Hello World\Hello World.csproj", "{C52EF3D7-D9DF-4A88-A2DE-9FF3995FD1A3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hello World", "Hello World\Hello World.csproj", "{C52EF3D7-D9DF-4A88-A2DE-9FF3995FD1A3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

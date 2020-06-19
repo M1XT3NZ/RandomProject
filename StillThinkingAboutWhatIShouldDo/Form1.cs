@@ -12,25 +12,33 @@ using MetroFramework.Forms;
 using System.Threading;
 using System.Diagnostics;
 using System.IO;
+
+
+
 using IniParser;
 using IniParser.Model; //I will maybe use the ini parser (dont really like xml)
 using System.Media;
 using Bleak;
 using System.Net;
+
+
 //using Telepathy;
-using Classes.Class;
 using Message = Telepathy.Message;
 using Event = Telepathy.EventType;
-using Data.Help;
+using System.Data.Design;
 
 namespace StillThinkingAboutWhatIShouldDo
 {
     
     public partial class Form1 : MetroForm
     {
+
         #region Declaration
 
         private readonly int Interval;
+        bool IsRunningS = false;
+        Telepathy.Client client = new Telepathy.Client();
+        Telepathy.Server server = new Telepathy.Server();
 
         #endregion Declaration
         int count = 0;
@@ -38,8 +46,8 @@ namespace StillThinkingAboutWhatIShouldDo
         {
             InitializeComponent();
             Interval = Convert.ToInt16(UpdateInterval);
-            this.StyleManager = GEILO;
-            //GEILO is obviously the style manager from the MetroFramework :D
+            this.StyleManager = StyleManager_Man;
+            
 
             Update = true;
             
@@ -60,7 +68,7 @@ namespace StillThinkingAboutWhatIShouldDo
             if (metroToggle1.Checked)
             {
 
-                GEILO.Theme = MetroThemeStyle.Dark;
+                StyleManager_Man.Theme = MetroThemeStyle.Dark;
                 Properties.Settings.Default.Thingy = true;
                 Properties.Settings.Default.Save();
                 //Mecha.Theme = MetroThemeStyle.Dark;
@@ -69,7 +77,7 @@ namespace StillThinkingAboutWhatIShouldDo
             if (metroToggle1.Checked == false)
             {
 
-                GEILO.Theme = MetroThemeStyle.Light;
+                StyleManager_Man.Theme = MetroThemeStyle.Light;
                 Properties.Settings.Default.Thingy = false;
                 Properties.Settings.Default.Save();
             }
@@ -188,33 +196,33 @@ namespace StillThinkingAboutWhatIShouldDo
             //Was just a fun thing to try probably couldve been done better...
             while (metroToggle2.Checked)
             {
-                GEILO.Style = MetroColorStyle.Default;
-                await Task.Delay(500);
-                GEILO.Style = MetroColorStyle.Black;
-                await Task.Delay(500);
-                GEILO.Style = MetroColorStyle.White;
-                await Task.Delay(500);
-                GEILO.Style = MetroColorStyle.Silver;
-                await Task.Delay(500);
-                GEILO.Style = MetroColorStyle.Blue;
-                await Task.Delay(500);
-                GEILO.Style = MetroColorStyle.Green;
-                await Task.Delay(500);
-                GEILO.Style = MetroColorStyle.Lime;
-                await Task.Delay(500);
-                GEILO.Style = MetroColorStyle.Orange;
-                await Task.Delay(500);
-                GEILO.Style = MetroColorStyle.Brown;
-                await Task.Delay(500);
-                GEILO.Style = MetroColorStyle.Pink;
-                await Task.Delay(500);
-                GEILO.Style = MetroColorStyle.Magenta;
-                await Task.Delay(500);
-                GEILO.Style = MetroColorStyle.Purple;
-                await Task.Delay(500);
-                GEILO.Style = MetroColorStyle.Red;
-                await Task.Delay(500);
-                GEILO.Style = MetroColorStyle.Yellow;
+                
+                for(int i = 0;i < 15;i++)
+                {
+                    if(i == 15)
+                    {
+                        i = 0;
+                    }
+                    await Task.Delay(500);
+                    StyleManager.Style = (MetroColorStyle)i;
+                }
+
+                //new Task(() => {
+                //    for (int i = 0; i < 15; i++)
+                //    {
+                //        if (i == 15)
+                //        {
+                //            i = 0;
+                //        }
+                //        this.BeginInvoke((MethodInvoker)delegate
+                //        {
+                            
+                //            StyleManager.Style = (MetroColorStyle)i;
+                //        });
+                        
+                //    }
+                //}).Start();
+
 
             }
         }
@@ -349,5 +357,109 @@ namespace StillThinkingAboutWhatIShouldDo
             Clipboard.SetText(kekse);
         }
 
+        private void BT_Connect_Click(object sender, EventArgs e)
+        {
+
+            if(IsRunningS)
+            {
+                var result = MessageBox.Show("You are actually running a Server already. Do you really want to Connect another Person?\nThis Will Close youre own Server.","2",MessageBoxButtons.YesNo,MessageBoxIcon.Information);
+                if(DialogResult.Yes == result)
+                {
+                    server.Stop();
+                    client.Connect("localhost", Convert.ToInt32(Port_txt.Text));
+                    IsRunningS = false;
+                }
+                else if(DialogResult.No == result)
+                {
+                    return;
+                }
+                
+            }
+            else
+            {
+                server.Start(Convert.ToInt32(Port_txt.Text)); IsRunningS = true;
+               
+                System.Windows.Forms.Timer test = new System.Windows.Forms.Timer();
+                test.Tick += Test_Tick;
+                test.Interval = 1;
+                test.Start();
+            }
+        }
+        int id;
+        private void Test_Tick(object sender, EventArgs e)
+        {
+            Telepathy.Message msg;
+            while (server.GetNextMessage(out msg))
+            {
+                
+                switch (msg.eventType)
+                {
+                    case Telepathy.EventType.Connected:
+                        Console.WriteLine(msg.connectionId + " Connected");
+                        id = msg.connectionId;
+                        Chat_TextBox.AppendText(Environment.NewLine + msg.connectionId + " Connected");
+                        break;
+                    case Telepathy.EventType.Data:
+                        Console.WriteLine(msg.connectionId + " Data: " + BitConverter.ToString(msg.data));
+                        
+                        if(!IsRunningS)
+                        {
+                            Chat_TextBox.AppendText(Environment.NewLine + Encoding.ASCII.GetString(msg.data));
+                        }
+
+                        for (int i = 0; i < id + 1; i++)
+                        {
+                            if (IsRunningS)
+                            {
+                                server.Send(i, msg.data);
+                            }
+                            
+                        }
+                        
+                        break;
+                    case Telepathy.EventType.Disconnected:
+                        Console.WriteLine(msg.connectionId + " Disconnected");
+                        Chat_TextBox.AppendText(msg.connectionId + " Disconnected");
+                        break;
+                }
+            }
+        }
+
+        private void BT_SendMessage_Click(object sender, EventArgs e)
+        {
+            Byte[] nice = Encoding.ASCII.GetBytes(Nickname.Text + " : " + Message_Chat.Text);
+            client.Send(nice);
+            Message_Chat.Text = "";
+        }
+
+        private void metroButton6_Click(object sender, EventArgs e)
+        {
+            client.Connect(Client_IP.Text, Convert.ToInt32(Port_txt.Text));
+            System.Windows.Forms.Timer Client_Tick = new System.Windows.Forms.Timer();
+            Client_Tick.Tick += Client_Tick_Tick;
+            Client_Tick.Interval = 1;
+            Client_Tick.Start();
+        }
+
+        private void Client_Tick_Tick(object sender, EventArgs e)
+        {
+            Telepathy.Message msg;
+            while (client.GetNextMessage(out msg))
+            {
+                switch (msg.eventType)
+                {
+                    case Telepathy.EventType.Connected:
+                        Console.WriteLine("Connected");
+                        break;
+                    case Telepathy.EventType.Data:
+                        Console.WriteLine("Data: " + BitConverter.ToString(msg.data));
+                        Chat_TextBox.AppendText(Environment.NewLine + Encoding.ASCII.GetString(msg.data));
+                        break;
+                    case Telepathy.EventType.Disconnected:
+                        Console.WriteLine("Disconnected");
+                        break;
+                }
+            }
+        }
     }
 }

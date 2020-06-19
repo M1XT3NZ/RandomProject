@@ -56,9 +56,17 @@
             this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.Chat = new MetroFramework.Controls.MetroTabPage();
+            this.Nickname = new MetroSet_UI.Controls.MetroSetTextBox();
+            this.Client_IP = new MetroSet_UI.Controls.MetroSetTextBox();
+            this.metroButton6 = new MetroFramework.Controls.MetroButton();
+            this.BT_SendMessage = new MetroFramework.Controls.MetroButton();
+            this.Message_Chat = new MetroSet_UI.Controls.MetroSetTextBox();
+            this.Chat_TextBox = new MetroSet_UI.Controls.MetroSetTextBox();
+            this.BT_CloseConnection = new MetroFramework.Controls.MetroButton();
+            this.BT_Connect = new MetroFramework.Controls.MetroButton();
             this.chConnectionId = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.GEILO = new MetroFramework.Components.MetroStyleManager(this.components);
+            this.StyleManager_Man = new MetroFramework.Components.MetroStyleManager(this.components);
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
@@ -69,13 +77,15 @@
             this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Port_txt = new MetroSet_UI.Controls.MetroSetTextBox();
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
             this.metroTabPage2.SuspendLayout();
             this.metroTabPage3.SuspendLayout();
             this.metroTabPage4.SuspendLayout();
             this.metroTabPage5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.GEILO)).BeginInit();
+            this.Chat.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.StyleManager_Man)).BeginInit();
             this.SuspendLayout();
             // 
             // metroToggle1
@@ -459,6 +469,15 @@
             // 
             // Chat
             // 
+            this.Chat.Controls.Add(this.Port_txt);
+            this.Chat.Controls.Add(this.Nickname);
+            this.Chat.Controls.Add(this.Client_IP);
+            this.Chat.Controls.Add(this.metroButton6);
+            this.Chat.Controls.Add(this.BT_SendMessage);
+            this.Chat.Controls.Add(this.Message_Chat);
+            this.Chat.Controls.Add(this.Chat_TextBox);
+            this.Chat.Controls.Add(this.BT_CloseConnection);
+            this.Chat.Controls.Add(this.BT_Connect);
             this.Chat.HorizontalScrollbarBarColor = true;
             this.Chat.HorizontalScrollbarHighlightOnWheel = false;
             this.Chat.HorizontalScrollbarSize = 10;
@@ -471,6 +490,176 @@
             this.Chat.VerticalScrollbarHighlightOnWheel = false;
             this.Chat.VerticalScrollbarSize = 10;
             // 
+            // Nickname
+            // 
+            this.Nickname.AutoCompleteCustomSource = null;
+            this.Nickname.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.Nickname.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.Nickname.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(155)))), ((int)(((byte)(155)))));
+            this.Nickname.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.Nickname.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(155)))), ((int)(((byte)(155)))));
+            this.Nickname.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            this.Nickname.Font = new System.Drawing.Font("Segoe WP", 10F);
+            this.Nickname.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this.Nickname.Image = null;
+            this.Nickname.Lines = null;
+            this.Nickname.Location = new System.Drawing.Point(767, 43);
+            this.Nickname.MaxLength = 32767;
+            this.Nickname.Multiline = false;
+            this.Nickname.Name = "Nickname";
+            this.Nickname.ReadOnly = false;
+            this.Nickname.Size = new System.Drawing.Size(114, 30);
+            this.Nickname.Style = MetroSet_UI.Design.Style.Light;
+            this.Nickname.StyleManager = null;
+            this.Nickname.TabIndex = 12;
+            this.Nickname.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.Nickname.ThemeAuthor = "Narwin";
+            this.Nickname.ThemeName = "MetroLite";
+            this.Nickname.UseSystemPasswordChar = false;
+            this.Nickname.WatermarkText = "Your NickName";
+            // 
+            // Client_IP
+            // 
+            this.Client_IP.AutoCompleteCustomSource = null;
+            this.Client_IP.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.Client_IP.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.Client_IP.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(155)))), ((int)(((byte)(155)))));
+            this.Client_IP.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.Client_IP.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(155)))), ((int)(((byte)(155)))));
+            this.Client_IP.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            this.Client_IP.Font = new System.Drawing.Font("Segoe WP", 10F);
+            this.Client_IP.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this.Client_IP.Image = null;
+            this.Client_IP.Lines = null;
+            this.Client_IP.Location = new System.Drawing.Point(767, 79);
+            this.Client_IP.MaxLength = 32767;
+            this.Client_IP.Multiline = false;
+            this.Client_IP.Name = "Client_IP";
+            this.Client_IP.ReadOnly = false;
+            this.Client_IP.Size = new System.Drawing.Size(114, 30);
+            this.Client_IP.Style = MetroSet_UI.Design.Style.Light;
+            this.Client_IP.StyleManager = null;
+            this.Client_IP.TabIndex = 11;
+            this.Client_IP.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.Client_IP.ThemeAuthor = "Narwin";
+            this.Client_IP.ThemeName = "MetroLite";
+            this.Client_IP.UseSystemPasswordChar = false;
+            this.Client_IP.WatermarkText = "Client/Server-IP";
+            // 
+            // metroButton6
+            // 
+            this.metroButton6.BackColor = System.Drawing.Color.Transparent;
+            this.metroButton6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.metroButton6.DisplayFocus = true;
+            this.metroButton6.Location = new System.Drawing.Point(767, 115);
+            this.metroButton6.Name = "metroButton6";
+            this.metroButton6.Size = new System.Drawing.Size(114, 29);
+            this.metroButton6.Style = MetroFramework.MetroColorStyle.White;
+            this.metroButton6.TabIndex = 10;
+            this.metroButton6.Text = "Connect To Server IP";
+            this.metroButton6.UseSelectable = true;
+            this.metroButton6.Click += new System.EventHandler(this.metroButton6_Click);
+            // 
+            // BT_SendMessage
+            // 
+            this.BT_SendMessage.BackColor = System.Drawing.Color.Transparent;
+            this.BT_SendMessage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.BT_SendMessage.DisplayFocus = true;
+            this.BT_SendMessage.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.BT_SendMessage.Location = new System.Drawing.Point(527, 278);
+            this.BT_SendMessage.Name = "BT_SendMessage";
+            this.BT_SendMessage.Size = new System.Drawing.Size(138, 29);
+            this.BT_SendMessage.Style = MetroFramework.MetroColorStyle.White;
+            this.BT_SendMessage.TabIndex = 9;
+            this.BT_SendMessage.Text = "Send";
+            this.BT_SendMessage.UseSelectable = true;
+            this.BT_SendMessage.Click += new System.EventHandler(this.BT_SendMessage_Click);
+            // 
+            // Message_Chat
+            // 
+            this.Message_Chat.AutoCompleteCustomSource = null;
+            this.Message_Chat.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.Message_Chat.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.Message_Chat.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(155)))), ((int)(((byte)(155)))));
+            this.Message_Chat.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.Message_Chat.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(155)))), ((int)(((byte)(155)))));
+            this.Message_Chat.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            this.Message_Chat.Font = new System.Drawing.Font("Segoe WP", 10F);
+            this.Message_Chat.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this.Message_Chat.Image = null;
+            this.Message_Chat.Lines = null;
+            this.Message_Chat.Location = new System.Drawing.Point(18, 278);
+            this.Message_Chat.MaxLength = 32767;
+            this.Message_Chat.Multiline = false;
+            this.Message_Chat.Name = "Message_Chat";
+            this.Message_Chat.ReadOnly = false;
+            this.Message_Chat.Size = new System.Drawing.Size(503, 30);
+            this.Message_Chat.Style = MetroSet_UI.Design.Style.Light;
+            this.Message_Chat.StyleManager = null;
+            this.Message_Chat.TabIndex = 8;
+            this.Message_Chat.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.Message_Chat.ThemeAuthor = "Narwin";
+            this.Message_Chat.ThemeName = "MetroLite";
+            this.Message_Chat.UseSystemPasswordChar = false;
+            this.Message_Chat.WatermarkText = "";
+            // 
+            // Chat_TextBox
+            // 
+            this.Chat_TextBox.AutoCompleteCustomSource = null;
+            this.Chat_TextBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.Chat_TextBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.Chat_TextBox.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(155)))), ((int)(((byte)(155)))));
+            this.Chat_TextBox.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.Chat_TextBox.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(155)))), ((int)(((byte)(155)))));
+            this.Chat_TextBox.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            this.Chat_TextBox.Font = new System.Drawing.Font("Segoe WP Light", 10F);
+            this.Chat_TextBox.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this.Chat_TextBox.Image = null;
+            this.Chat_TextBox.Lines = null;
+            this.Chat_TextBox.Location = new System.Drawing.Point(18, 13);
+            this.Chat_TextBox.MaxLength = 2147483647;
+            this.Chat_TextBox.Multiline = true;
+            this.Chat_TextBox.Name = "Chat_TextBox";
+            this.Chat_TextBox.ReadOnly = true;
+            this.Chat_TextBox.Size = new System.Drawing.Size(647, 259);
+            this.Chat_TextBox.Style = MetroSet_UI.Design.Style.Light;
+            this.Chat_TextBox.StyleManager = null;
+            this.Chat_TextBox.TabIndex = 7;
+            this.Chat_TextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.Chat_TextBox.ThemeAuthor = "Narwin";
+            this.Chat_TextBox.ThemeName = "MetroLite";
+            this.Chat_TextBox.UseSystemPasswordChar = false;
+            this.Chat_TextBox.WatermarkText = "";
+            // 
+            // BT_CloseConnection
+            // 
+            this.BT_CloseConnection.BackColor = System.Drawing.Color.Transparent;
+            this.BT_CloseConnection.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.BT_CloseConnection.DisplayFocus = true;
+            this.BT_CloseConnection.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.BT_CloseConnection.Location = new System.Drawing.Point(763, 282);
+            this.BT_CloseConnection.Name = "BT_CloseConnection";
+            this.BT_CloseConnection.Size = new System.Drawing.Size(121, 29);
+            this.BT_CloseConnection.Style = MetroFramework.MetroColorStyle.White;
+            this.BT_CloseConnection.TabIndex = 6;
+            this.BT_CloseConnection.Text = "Close Connection";
+            this.BT_CloseConnection.UseSelectable = true;
+            // 
+            // BT_Connect
+            // 
+            this.BT_Connect.BackColor = System.Drawing.Color.Transparent;
+            this.BT_Connect.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.BT_Connect.DisplayFocus = true;
+            this.BT_Connect.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.BT_Connect.Location = new System.Drawing.Point(767, 243);
+            this.BT_Connect.Name = "BT_Connect";
+            this.BT_Connect.Size = new System.Drawing.Size(114, 29);
+            this.BT_Connect.Style = MetroFramework.MetroColorStyle.White;
+            this.BT_Connect.TabIndex = 6;
+            this.BT_Connect.Text = "Connect";
+            this.BT_Connect.UseSelectable = true;
+            this.BT_Connect.Click += new System.EventHandler(this.BT_Connect_Click);
+            // 
             // chConnectionId
             // 
             this.chConnectionId.Text = "IP";
@@ -479,9 +668,9 @@
             // 
             this.columnHeader4.Text = "Name";
             // 
-            // GEILO
+            // StyleManager_Man
             // 
-            this.GEILO.Owner = this;
+            this.StyleManager_Man.Owner = this;
             // 
             // metroButton1
             // 
@@ -505,6 +694,34 @@
             // timer1
             // 
             this.timer1.Interval = 8000;
+            // 
+            // Port_txt
+            // 
+            this.Port_txt.AutoCompleteCustomSource = null;
+            this.Port_txt.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.Port_txt.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.Port_txt.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(155)))), ((int)(((byte)(155)))));
+            this.Port_txt.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.Port_txt.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(155)))), ((int)(((byte)(155)))));
+            this.Port_txt.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            this.Port_txt.Font = new System.Drawing.Font("Segoe WP", 10F);
+            this.Port_txt.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this.Port_txt.Image = null;
+            this.Port_txt.Lines = null;
+            this.Port_txt.Location = new System.Drawing.Point(767, 7);
+            this.Port_txt.MaxLength = 32767;
+            this.Port_txt.Multiline = false;
+            this.Port_txt.Name = "Port_txt";
+            this.Port_txt.ReadOnly = false;
+            this.Port_txt.Size = new System.Drawing.Size(114, 30);
+            this.Port_txt.Style = MetroSet_UI.Design.Style.Light;
+            this.Port_txt.StyleManager = null;
+            this.Port_txt.TabIndex = 13;
+            this.Port_txt.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.Port_txt.ThemeAuthor = "Narwin";
+            this.Port_txt.ThemeName = "MetroLite";
+            this.Port_txt.UseSystemPasswordChar = false;
+            this.Port_txt.WatermarkText = "Port";
             // 
             // Form1
             // 
@@ -535,7 +752,8 @@
             this.metroTabPage4.PerformLayout();
             this.metroTabPage5.ResumeLayout(false);
             this.metroTabPage5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.GEILO)).EndInit();
+            this.Chat.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.StyleManager_Man)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -545,7 +763,7 @@
         private MetroFramework.Controls.MetroTabPage metroTabPage1;
         private MetroFramework.Controls.MetroLabel metroLabel1;
         public MetroFramework.Controls.MetroToggle metroToggle1;
-        public MetroFramework.Components.MetroStyleManager GEILO;
+        public MetroFramework.Components.MetroStyleManager StyleManager_Man;
         public MetroFramework.Controls.MetroTabPage metroTabPage2;
         public MetroFramework.Controls.MetroTabPage metroTabPage3;
         public MetroFramework.Controls.MetroButton metroButton1;
@@ -581,6 +799,15 @@
         private System.Windows.Forms.ColumnHeader columnHeader9;
         private System.Windows.Forms.ColumnHeader columnHeader10;
         private System.Windows.Forms.ColumnHeader columnHeader11;
+        public MetroFramework.Controls.MetroButton BT_CloseConnection;
+        public MetroFramework.Controls.MetroButton BT_Connect;
+        private MetroSet_UI.Controls.MetroSetTextBox Chat_TextBox;
+        public MetroFramework.Controls.MetroButton BT_SendMessage;
+        private MetroSet_UI.Controls.MetroSetTextBox Message_Chat;
+        public MetroFramework.Controls.MetroButton metroButton6;
+        private MetroSet_UI.Controls.MetroSetTextBox Client_IP;
+        private MetroSet_UI.Controls.MetroSetTextBox Nickname;
+        private MetroSet_UI.Controls.MetroSetTextBox Port_txt;
     }
 }
 
