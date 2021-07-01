@@ -7,5 +7,5 @@ Just a random useless project
 * A Chat (WIP)
 
 
-OUTDATED IMAGE
+
 ![Program-Image](https://i.imgur.com/MbyHZPv.png)
