@@ -1,29 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
+﻿using MetroFramework;
+using MetroFramework.Forms;
+using System;
+using System.Net;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MetroFramework;
-using MetroFramework.Forms;
-using System.Threading;
-using System.Diagnostics;
-using System.IO;
-
-using IniParser;
-using IniParser.Model; //I will maybe use the ini parser (dont really like xml)
-using System.Media;
-using Bleak;
-using System.Net;
 
 //using Telepathy;
-using Message = Telepathy.Message;
-using Event = Telepathy.EventType;
 
-namespace StillThinkingAboutWhatIShouldDo
+namespace WannabeChat
 {
     public partial class Main : MetroForm
     {

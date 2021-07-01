@@ -1,4 +1,4 @@
-﻿namespace StillThinkingAboutWhatIShouldDo
+﻿namespace WannabeChat
 {
     partial class Main
     {

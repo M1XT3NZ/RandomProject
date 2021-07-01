@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace StillThinkingAboutWhatIShouldDo.Server_Client
+namespace WannabeChat.Server_Client
 {
     public static class Server
     {
