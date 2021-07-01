@@ -25,7 +25,7 @@ using Event = Telepathy.EventType;
 
 namespace StillThinkingAboutWhatIShouldDo
 {
-    public partial class Form1 : MetroForm
+    public partial class Main : MetroForm
     {
         #region Declaration
 
@@ -36,7 +36,7 @@ namespace StillThinkingAboutWhatIShouldDo
 
         #endregion Declaration
 
-        public Form1()
+        public Main()
         {
             InitializeComponent();
             //Interval = Convert.ToInt16(UpdateInterval);
@@ -72,7 +72,6 @@ namespace StillThinkingAboutWhatIShouldDo
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            metroTabControl1.TabPages.Remove(metroTabPage4);
             metroTabControl1.TabPages.Remove(metroTabPage3);
 
             //This was suppposed to be a ping to the server that then looks up if there is an update
@@ -91,25 +90,13 @@ namespace StillThinkingAboutWhatIShouldDo
 
             metroLabel5.Text = Properties.Settings.Default.Number.ToString();
 
-            //Properties.Settings.Default.Number;
-
             string[] commandLineArgs = Environment.GetCommandLineArgs();
-            commandLineArgs.SetValue("-iamdev", 0);
             for (int i = 0; i < commandLineArgs.Length; i++)
             {
                 if (commandLineArgs[i] == "-iamdev")
                 {
                     metroTabControl1.TabPages.Insert(2, metroTabPage3);
                 }
-                else if (commandLineArgs[i] == "-injector")
-                {
-                    metroTabControl1.TabPages.Insert(3, metroTabPage4);
-                }
-                //else
-                //{
-                //    metroTabControl1.TabPages.Remove(metroTabPage4);
-                //    metroTabControl1.TabPages.Remove(metroTabPage3);
-                //}
             }
         }
 

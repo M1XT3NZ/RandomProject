@@ -12,7 +12,7 @@ namespace StillThinkingAboutWhatIShouldDo.Server_Client
         private static Telepathy.Server server = new Telepathy.Server();
         private static Telepathy.Client client = Server_Client.TClient.GetClient();
         private static bool IsRunningS = false;
-        private static Form1 _form;
+        private static Main _form;
 
         public static void StartServer()
         {

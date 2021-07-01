@@ -1,6 +1,6 @@
 ﻿namespace StillThinkingAboutWhatIShouldDo
 {
-    partial class Form1
+    partial class Main
     {
         /// <summary>
         /// Required designer variable.
@@ -36,18 +36,6 @@
             this.metroTabPage3 = new MetroFramework.Controls.MetroTabPage();
             this.ColorChanger = new MetroFramework.Controls.MetroToggle();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
-            this.metroTabPage4 = new MetroFramework.Controls.MetroTabPage();
-            this.metroRadioButton1 = new MetroFramework.Controls.MetroRadioButton();
-            this.metroListView1 = new MetroFramework.Controls.MetroListView();
-            this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader2 = new System.Windows.Forms.ColumnHeader();
-            this.metroButton5 = new MetroFramework.Controls.MetroButton();
-            this.metroButton3 = new MetroFramework.Controls.MetroButton();
-            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
-            this.metroButton4 = new MetroFramework.Controls.MetroButton();
-            this.metroTabPage5 = new MetroFramework.Controls.MetroTabPage();
-            this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.Chat = new MetroFramework.Controls.MetroTabPage();
             this.Port_txt = new MetroSet_UI.Controls.MetroSetTextBox();
             this.Nickname = new MetroSet_UI.Controls.MetroSetTextBox();
@@ -58,6 +46,9 @@
             this.Chat_TextBox = new MetroSet_UI.Controls.MetroSetTextBox();
             this.BT_CloseConnection = new MetroFramework.Controls.MetroButton();
             this.BT_Connect = new MetroFramework.Controls.MetroButton();
+            this.metroTabPage5 = new MetroFramework.Controls.MetroTabPage();
+            this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.chConnectionId = new System.Windows.Forms.ColumnHeader();
             this.columnHeader4 = new System.Windows.Forms.ColumnHeader();
             this.StyleManager_Man = new MetroFramework.Components.MetroStyleManager(this.components);
@@ -74,9 +65,8 @@
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage2.SuspendLayout();
             this.metroTabPage3.SuspendLayout();
-            this.metroTabPage4.SuspendLayout();
-            this.metroTabPage5.SuspendLayout();
             this.Chat.SuspendLayout();
+            this.metroTabPage5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.StyleManager_Man)).BeginInit();
             this.SuspendLayout();
             // 
@@ -95,7 +85,6 @@
             // 
             this.metroTabControl1.Controls.Add(this.metroTabPage2);
             this.metroTabControl1.Controls.Add(this.metroTabPage3);
-            this.metroTabControl1.Controls.Add(this.metroTabPage4);
             this.metroTabControl1.Controls.Add(this.Chat);
             this.metroTabControl1.Controls.Add(this.metroTabPage5);
             this.metroTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -167,116 +156,6 @@
             this.metroLabel2.Size = new System.Drawing.Size(65, 19);
             this.metroLabel2.TabIndex = 3;
             this.metroLabel2.Text = "CRASHES";
-            // 
-            // metroTabPage4
-            // 
-            this.metroTabPage4.AutoScroll = true;
-            this.metroTabPage4.Controls.Add(this.metroRadioButton1);
-            this.metroTabPage4.Controls.Add(this.metroListView1);
-            this.metroTabPage4.Controls.Add(this.metroButton5);
-            this.metroTabPage4.Controls.Add(this.metroButton3);
-            this.metroTabPage4.Controls.Add(this.metroLabel3);
-            this.metroTabPage4.Controls.Add(this.metroButton4);
-            this.metroTabPage4.HorizontalScrollbar = true;
-            this.metroTabPage4.HorizontalScrollbarBarColor = true;
-            this.metroTabPage4.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroTabPage4.HorizontalScrollbarSize = 10;
-            this.metroTabPage4.Location = new System.Drawing.Point(4, 38);
-            this.metroTabPage4.Name = "metroTabPage4";
-            this.metroTabPage4.Size = new System.Drawing.Size(884, 314);
-            this.metroTabPage4.TabIndex = 3;
-            this.metroTabPage4.Text = "Injector";
-            this.metroTabPage4.VerticalScrollbar = true;
-            this.metroTabPage4.VerticalScrollbarBarColor = true;
-            this.metroTabPage4.VerticalScrollbarHighlightOnWheel = false;
-            this.metroTabPage4.VerticalScrollbarSize = 10;
-            // 
-            // metroRadioButton1
-            // 
-            this.metroRadioButton1.AutoSize = true;
-            this.metroRadioButton1.Location = new System.Drawing.Point(222, 121);
-            this.metroRadioButton1.Name = "metroRadioButton1";
-            this.metroRadioButton1.Size = new System.Drawing.Size(87, 15);
-            this.metroRadioButton1.TabIndex = 11;
-            this.metroRadioButton1.Text = "ManualMap";
-            this.metroRadioButton1.UseSelectable = true;
-            // 
-            // metroListView1
-            // 
-            this.metroListView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2});
-            this.metroListView1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.metroListView1.FullRowSelect = true;
-            this.metroListView1.Location = new System.Drawing.Point(377, 42);
-            this.metroListView1.Name = "metroListView1";
-            this.metroListView1.OwnerDraw = true;
-            this.metroListView1.Size = new System.Drawing.Size(504, 165);
-            this.metroListView1.TabIndex = 10;
-            this.metroListView1.UseCompatibleStateImageBehavior = false;
-            this.metroListView1.UseSelectable = true;
-            this.metroListView1.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "sex1";
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "sex";
-            // 
-            // metroButton5
-            //
-            // 
-            // metroLabel3
-            // 
-            this.metroLabel3.AutoSize = true;
-            this.metroLabel3.Location = new System.Drawing.Point(104, 151);
-            this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(112, 19);
-            this.metroLabel3.TabIndex = 6;
-            this.metroLabel3.Text = "Waiting to Inject...";
-            // 
-            // metroButton4
-            // 
-
-            // 
-            // metroTabPage5
-            // 
-            this.metroTabPage5.AutoScroll = true;
-            this.metroTabPage5.Controls.Add(this.metroLabel5);
-            this.metroTabPage5.Controls.Add(this.metroLabel4);
-            this.metroTabPage5.HorizontalScrollbar = true;
-            this.metroTabPage5.HorizontalScrollbarBarColor = true;
-            this.metroTabPage5.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroTabPage5.HorizontalScrollbarSize = 10;
-            this.metroTabPage5.Location = new System.Drawing.Point(4, 38);
-            this.metroTabPage5.Name = "metroTabPage5";
-            this.metroTabPage5.Size = new System.Drawing.Size(884, 314);
-            this.metroTabPage5.TabIndex = 4;
-            this.metroTabPage5.Text = "About";
-            this.metroTabPage5.VerticalScrollbar = true;
-            this.metroTabPage5.VerticalScrollbarBarColor = true;
-            this.metroTabPage5.VerticalScrollbarHighlightOnWheel = false;
-            this.metroTabPage5.VerticalScrollbarSize = 10;
-            // 
-            // metroLabel5
-            // 
-            this.metroLabel5.AutoSize = true;
-            this.metroLabel5.Location = new System.Drawing.Point(177, 23);
-            this.metroLabel5.Name = "metroLabel5";
-            this.metroLabel5.Size = new System.Drawing.Size(16, 19);
-            this.metroLabel5.TabIndex = 3;
-            this.metroLabel5.Text = "0";
-            // 
-            // metroLabel4
-            // 
-            this.metroLabel4.AutoSize = true;
-            this.metroLabel4.Location = new System.Drawing.Point(15, 23);
-            this.metroLabel4.Name = "metroLabel4";
-            this.metroLabel4.Size = new System.Drawing.Size(109, 19);
-            this.metroLabel4.TabIndex = 2;
-            this.metroLabel4.Text = "About : Program";
             // 
             // Chat
             // 
@@ -508,6 +387,43 @@
             this.BT_Connect.UseVisualStyleBackColor = false;
             this.BT_Connect.Click += new System.EventHandler(this.BT_Connect_Click);
             // 
+            // metroTabPage5
+            // 
+            this.metroTabPage5.AutoScroll = true;
+            this.metroTabPage5.Controls.Add(this.metroLabel5);
+            this.metroTabPage5.Controls.Add(this.metroLabel4);
+            this.metroTabPage5.HorizontalScrollbar = true;
+            this.metroTabPage5.HorizontalScrollbarBarColor = true;
+            this.metroTabPage5.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroTabPage5.HorizontalScrollbarSize = 10;
+            this.metroTabPage5.Location = new System.Drawing.Point(4, 38);
+            this.metroTabPage5.Name = "metroTabPage5";
+            this.metroTabPage5.Size = new System.Drawing.Size(884, 314);
+            this.metroTabPage5.TabIndex = 4;
+            this.metroTabPage5.Text = "About";
+            this.metroTabPage5.VerticalScrollbar = true;
+            this.metroTabPage5.VerticalScrollbarBarColor = true;
+            this.metroTabPage5.VerticalScrollbarHighlightOnWheel = false;
+            this.metroTabPage5.VerticalScrollbarSize = 10;
+            // 
+            // metroLabel5
+            // 
+            this.metroLabel5.AutoSize = true;
+            this.metroLabel5.Location = new System.Drawing.Point(177, 23);
+            this.metroLabel5.Name = "metroLabel5";
+            this.metroLabel5.Size = new System.Drawing.Size(16, 19);
+            this.metroLabel5.TabIndex = 3;
+            this.metroLabel5.Text = "0";
+            // 
+            // metroLabel4
+            // 
+            this.metroLabel4.AutoSize = true;
+            this.metroLabel4.Location = new System.Drawing.Point(15, 23);
+            this.metroLabel4.Name = "metroLabel4";
+            this.metroLabel4.Size = new System.Drawing.Size(109, 19);
+            this.metroLabel4.TabIndex = 2;
+            this.metroLabel4.Text = "About : Program";
+            // 
             // chConnectionId
             // 
             this.chConnectionId.Text = "IP";
@@ -544,7 +460,7 @@
             // 
             this.timer1.Interval = 8000;
             // 
-            // Form1
+            // Main
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
@@ -554,7 +470,7 @@
             this.Controls.Add(this.metroButton1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "Form1";
+            this.Name = "Main";
             this.Resizable = false;
             this.ShadowType = MetroFramework.Forms.MetroFormShadowType.None;
             this.ShowIcon = false;
@@ -567,11 +483,9 @@
             this.metroTabPage2.PerformLayout();
             this.metroTabPage3.ResumeLayout(false);
             this.metroTabPage3.PerformLayout();
-            this.metroTabPage4.ResumeLayout(false);
-            this.metroTabPage4.PerformLayout();
+            this.Chat.ResumeLayout(false);
             this.metroTabPage5.ResumeLayout(false);
             this.metroTabPage5.PerformLayout();
-            this.Chat.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.StyleManager_Man)).EndInit();
             this.ResumeLayout(false);
 
@@ -587,8 +501,6 @@
         private MetroFramework.Controls.MetroTextBox metroTextBox1;
         private MetroFramework.Controls.MetroTextBox metroTextBox2;
         private MetroFramework.Controls.MetroTextBox metroTextBox3;
-        public System.Windows.Forms.ColumnHeader columnHeader1;
-        public System.Windows.Forms.ColumnHeader columnHeader2;
         public MetroFramework.Controls.MetroButton BT_CloseConnection;
         public MetroFramework.Controls.MetroButton BT_Connect;
         public MetroFramework.Controls.MetroButton BT_SendMessage;
@@ -601,19 +513,12 @@
         public MetroFramework.Controls.MetroLabel metroLabel1;
         public MetroFramework.Controls.MetroToggle ColorChanger;
         public MetroFramework.Controls.MetroLabel metroLabel2;
-        public MetroFramework.Controls.MetroTabPage metroTabPage4;
-        public MetroFramework.Controls.MetroButton metroButton4;
         public System.Windows.Forms.OpenFileDialog openFileDialog1;
-        public MetroFramework.Controls.MetroLabel metroLabel3;
-        public MetroFramework.Controls.MetroButton metroButton3;
         public MetroFramework.Controls.MetroTabPage metroTabPage5;
         public MetroFramework.Controls.MetroLabel metroLabel4;
         public MetroFramework.Controls.MetroLabel metroLabel5;
-        public MetroFramework.Controls.MetroButton metroButton5;
-        public MetroFramework.Controls.MetroListView metroListView1;
         public System.Windows.Forms.Timer timer1;
         public MetroFramework.Controls.MetroTabPage Chat;
-        public MetroFramework.Controls.MetroRadioButton metroRadioButton1;
         public System.Windows.Forms.ColumnHeader chConnectionId;
         public System.Windows.Forms.ColumnHeader columnHeader4;
         public System.Windows.Forms.ColumnHeader columnHeader5;

@@ -10,7 +10,7 @@ namespace StillThinkingAboutWhatIShouldDo.Server_Client
     {
         private static Telepathy.Client client = TClient.GetClient();
 
-        private static Form1 _form;
+        private static Main _form;
 
         public static void SendMessage()
         {
