@@ -8,4 +8,4 @@ Just a random useless project
 
 
 OUTDATED IMAGE
-![Program-Image](https://i.imgur.com/ELMpuh4.png)
+![Program-Image](https://i.imgur.com/MbyHZPv.png)
